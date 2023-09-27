@@ -3,6 +3,16 @@
  */
 module.exports = {
   plugins: ['import'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.mjs', '.js', '.json'],
+      },
+    },
+    'import/extensions': ['.js', '.mjs', '.jsx'],
+    'import/core-modules': [],
+    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+  },
   rules: {
     'import/export': 'error', // 禁止任何无效导出，例如同一名称的再次导出
     'import/no-deprecated': 'off', // 禁止导入标有 @deprecated 文档标签的名称
