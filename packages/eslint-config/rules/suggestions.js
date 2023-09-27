@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 const { ERROR, OFF, WARN } = require('./constant');
 
 module.exports = {
