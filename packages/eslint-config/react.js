@@ -1,18 +1,7 @@
-const { ERROR, OFF } = require('./basic/constant');
-
 module.exports = {
   extends: [
-    'plugin:react/recommended', //
-    'plugin:react-hooks/recommended',
-    './index',
+    './base/default.js', //
+    './base/react.js',
+    'prettier', // 放到最后一项
   ],
-  settings: {
-    react: {
-      version: '17.0',
-    },
-  },
-  rules: {
-    'react/react-in-jsx-scope': OFF,
-    'function-paren-newline': [ERROR, 'consistent'],
-  },
 };
