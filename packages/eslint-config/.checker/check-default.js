@@ -32,7 +32,7 @@ function fetchHtml() {
   });
 }
 
-function getRuleKeysFromDom(html) {
+function getRuleKeysFromHtml(html) {
   const remoteKeys = [];
   return new Promise((resolve) => {
     let $ = cheerio.load(html);
@@ -85,7 +85,7 @@ function check(remoteKeys) {
 module.exports = function () {
   console.log('------------------------ check default rules before ------------------------');
   fetchHtml()
-    .then(getRuleKeysFromDom)
+    .then(getRuleKeysFromHtml)
     .then(check)
     .catch((e) => {
       failure();
