@@ -29,7 +29,7 @@ module.exports = {
     'import',
   ],
   extends: [
-    './baseRules', //
+    './baseRules.js', //
     'plugin:unicorn/recommended',
     'plugin:promise/recommended',
     'plugin:import/recommended',
