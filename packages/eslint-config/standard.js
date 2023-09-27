@@ -1,6 +1,3 @@
-const possibleProblemsRules = require('./basic/possibleProblems');
-const suggestionsRules = require('./basic/suggestions');
-const layoutAndFormattingRules = require('./basic/layoutAndFormatting');
 
 module.exports = {
   parserOptions: {
@@ -27,10 +24,6 @@ module.exports = {
     window: 'readonly',
   },
   rules: {
-    ...possibleProblemsRules,
-    ...suggestionsRules,
-    ...layoutAndFormattingRules,
-
     'import/export': 'error',
     'import/first': 'error',
     'import/no-absolute-path': ['error', { esmodule: true, commonjs: true, amd: false }],
