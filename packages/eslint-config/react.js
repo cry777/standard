@@ -1,7 +1,11 @@
 const { ERROR, OFF } = require('./basic/constant');
 
 module.exports = {
-  extends: ['./basic', 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
+  extends: [
+    'plugin:react/recommended', //
+    'plugin:react-hooks/recommended',
+    './index',
+  ],
   settings: {
     react: {
       version: '17.0',

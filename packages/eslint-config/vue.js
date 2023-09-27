@@ -2,21 +2,18 @@ const { ERROR } = require('./basic/constant');
 
 module.exports = {
   extends: [
-    './basic',
-    'plugin:vue/vue3-recommended',
+    'plugin:vue/vue3-recommended', //
+    './index',
   ],
   settings: {},
   overrides: [
     {
       files: ['*.vue'],
       parser: 'vue-eslint-parser',
-    }
+    },
   ],
   rules: {
-    'function-paren-newline': [
-      ERROR,
-      'consistent',
-    ],
+    'function-paren-newline': [ERROR, 'consistent'],
     'vue/max-attributes-per-line': 'off',
     'vue/no-v-html': 'off',
     'vue/require-prop-types': 'off',
@@ -30,28 +27,33 @@ module.exports = {
     'vue/no-setup-props-destructure': 'off',
 
     'vue/component-tags-order': [
-      ERROR, {
+      ERROR,
+      {
         order: ['script', 'template', 'style'],
-      }
+      },
     ],
     'vue/block-tag-newline': [
-      ERROR, {
+      ERROR,
+      {
         singleline: 'always',
         multiline: 'always',
-      }
+      },
     ],
     'vue/component-name-in-template-casing': [ERROR, 'PascalCase'],
     'vue/component-options-name-casing': [ERROR, 'PascalCase'],
     'vue/custom-event-name-casing': [ERROR, 'camelCase'],
     'vue/define-macros-order': [
-      ERROR, {
+      ERROR,
+      {
         order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots'],
-      }
+      },
     ],
     'vue/html-comment-content-spacing': [
-      ERROR, 'always', {
+      ERROR,
+      'always',
+      {
         exceptions: ['-'],
-      }
+      },
     ],
     'vue/no-restricted-v-bind': [ERROR, '/^v-/'],
     'vue/no-useless-v-bind': ERROR,
@@ -78,12 +80,7 @@ module.exports = {
     'vue/no-extra-parens': [ERROR, 'functions'],
     'vue/no-irregular-whitespace': ERROR,
     'vue/no-loss-of-precision': ERROR,
-    'vue/no-restricted-syntax': [
-      ERROR,
-      'DebuggerStatement',
-      'LabeledStatement',
-      'WithStatement',
-    ],
+    'vue/no-restricted-syntax': [ERROR, 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
     'vue/no-sparse-arrays': ERROR,
     'vue/object-curly-newline': [ERROR, { multiline: true, consistent: true }],
     'vue/object-curly-spacing': [ERROR, 'always'],

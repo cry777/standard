@@ -23,6 +23,19 @@ module.exports = {
     navigator: 'readonly',
     window: 'readonly',
   },
-  plugins: ['unicorn', 'promise'],
-  extends: ['./baseRules', 'plugin:unicorn/recommended', 'plugin:promise/recommended'],
+  plugins: [
+    'unicorn', //
+    'promise',
+    'import',
+  ],
+  extends: [
+    './baseRules', //
+    'plugin:unicorn/recommended',
+    'plugin:promise/recommended',
+    'plugin:import/recommended',
+    'prettier', // 放到最后一项
+  ],
+  rules: {
+    'import/export': 'error', // 禁止任何无效导出，即同一名称的再次导出。
+  },
 };
