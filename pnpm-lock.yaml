@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      eslint-config-axum:
+        specifier: workspace:*
+        version: link:packages/eslint-config
       prettier:
         specifier: ^3.0.3
         version: 3.0.3

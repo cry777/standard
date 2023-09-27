@@ -41,5 +41,6 @@
   "eslint.enable": true, // eslint开启
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true // 代码保存使用eslint格式化
-  }
+  },
+  "eslint.validate": ["javascript"]
 }

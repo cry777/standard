@@ -75,10 +75,7 @@ module.exports = {
   'dot-notation': ERROR,
 
   // 必须使用 === 或 !==，禁止使用 == 或 !=
-  eqeqeq: [
-    ERROR,
-    'always',
-  ],
+  eqeqeq: [ERROR, 'always'],
 
   // 函数赋值给变量的时候，函数名必须与变量名一致
   'func-name-matching': [
@@ -124,19 +121,13 @@ module.exports = {
   'max-classes-per-file': OFF,
 
   // 代码块嵌套的深度禁止超过 5 层
-  'max-depth': [
-    ERROR,
-    5,
-  ],
+  'max-depth': [ERROR, 5],
 
   /*
    * @maybe
    * 限制一个文件最多的行数
    */
-  'max-lines': [
-    WARN,
-    { max: 360, skipBlankLines: false, skipComments: false },
-  ],
+  'max-lines': [WARN, { max: 360, skipBlankLines: false, skipComments: false }],
 
   // 限制函数块中的代码行数
   'max-lines-per-function': [
@@ -150,22 +141,13 @@ module.exports = {
   ],
 
   // 回调函数嵌套禁止超过 3 层，多了请用 async await 替代
-  'max-nested-callbacks': [
-    ERROR,
-    3,
-  ],
+  'max-nested-callbacks': [ERROR, 3],
 
   // 函数的参数禁止超过 3 个
-  'max-params': [
-    ERROR,
-    4,
-  ],
+  'max-params': [ERROR, 4],
 
   // 限制函数块中的语句数量
-  'max-statements': [
-    OFF,
-    50,
-  ],
+  'max-statements': [OFF, 50],
 
   // 约束多行注释的格式
   'multiline-comment-style': OFF,
@@ -432,10 +414,7 @@ module.exports = {
   'no-restricted-syntax': OFF,
 
   // 禁止在 return 语句里赋值
-  'no-return-assign': [
-    ERROR,
-    'always',
-  ],
+  'no-return-assign': [ERROR, 'always'],
 
   /*
    * 禁止出现 location.href = 'javascript:void(0)';
@@ -533,15 +512,9 @@ module.exports = {
   'object-shorthand': ERROR,
 
   // 强制变量在函数中一起或单独声明
-  'one-var': [
-    ERROR,
-    'never',
-  ],
+  'one-var': [ERROR, 'never'],
 
-  'one-var-declaration-per-line': [
-    ERROR,
-    'initializations',
-  ],
+  'one-var-declaration-per-line': [ERROR, 'initializations'],
 
   // 必须使用 x = x + y 而不是 x += y
   'operator-assignment': OFF,
@@ -592,10 +565,7 @@ module.exports = {
   'prefer-template': OFF,
 
   // 需要在对象文字属性名称周围加上引号
-  'quote-props': [
-    ERROR,
-    'as-needed',
-  ],
+  'quote-props': [ERROR, 'as-needed'],
 
   // parseInt 必须传入第二个参数
   radix: ERROR,
@@ -616,12 +586,7 @@ module.exports = {
       ignoreCase: false,
       ignoreDeclarationSort: false,
       ignoreMemberSort: false,
-      memberSyntaxSortOrder: [
-        'none',
-        'all',
-        'multiple',
-        'single',
-      ],
+      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
     },
   ],
 
@@ -645,10 +610,7 @@ module.exports = {
   ],
 
   // 禁止使用 'use strict';
-  strict: [
-    ERROR,
-    'never',
-  ],
+  strict: [ERROR, 'never'],
 
   // 创建 Symbol 时必须传入参数
   'symbol-description': ERROR,
