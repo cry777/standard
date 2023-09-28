@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['axum'],
+  extends: ['axum/ts'],
   rules: {
     'unicorn/prefer-module': 'off',
   },

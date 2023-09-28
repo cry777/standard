@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    './base/default.js', //
+    './plugins/common.js', //
     'prettier', // 放到最后一项
   ],
 };

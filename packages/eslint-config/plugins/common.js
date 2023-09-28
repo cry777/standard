@@ -29,8 +29,34 @@ module.exports = {
   ],
   extends: [
     '../rules/index.js', //
+    './imports.js',
     'plugin:unicorn/recommended',
     'plugin:promise/recommended',
-    './imports.js',
+    'plugin:node/recommended',
   ],
+  // 忽略的文件
+  ignorePatterns: [
+    '*.min.*',
+    '*.d.ts',
+    'dist',
+    'node_modules',
+    'output',
+    'out',
+    'coverage',
+    'public',
+    'temp',
+    'package-lock.json',
+    'pnpm-lock.yaml',
+    'yarn.lock',
+    '__snapshots__',
+    // force include
+    '!.github',
+    '!.vitepress',
+    '!.vscode',
+    // force exclude
+    '.vitepress/cache',
+  ],
+  rules: {
+    'unicorn/prefer-top-level-await': 'off',
+  },
 };

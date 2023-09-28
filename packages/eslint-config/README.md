@@ -7,5 +7,6 @@
 - `eslint-plugin-react`: react 规则
 - `eslint-plugin-react-hooks`: react-hooks 规则
 - `eslint-plugin-vue`: vue 规则
+- `eslint-plugin-node`: node 规则
 - `@typescript-eslint/eslint-plugin`: typescript 规则
 - `@typescript-eslint/parser`: typescript 解析器
