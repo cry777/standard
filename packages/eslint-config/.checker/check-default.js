@@ -1,4 +1,3 @@
-const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const possibleProblems = require('../rules/possibleProblems');
@@ -7,6 +6,7 @@ const layoutAndFormatting = require('../rules/layoutAndFormatting');
 
 function failure() {
   console.log('------------------------ check default rules failure ------------------------');
+  process.exit(1);
 }
 
 function fetchHtml() {
@@ -66,30 +66,28 @@ function getRuleKeysFromHtml(html) {
 }
 
 function check(remoteKeys) {
-  const existedRules = [
-    ...Object.keys(layoutAndFormatting), //
-    ...Object.keys(suggestions),
-    ...Object.keys(possibleProblems),
-  ];
-  const removedRules = existedRules.filter((r) => !remoteKeys.includes(r));
-  const appendRules = remoteKeys.filter((r) => !existedRules.includes(r));
-  if (removedRules.length > 0) {
-    console.log('Remove rules: ', removedRules);
-  }
-  if (appendRules.length > 0) {
-    console.log('Appended rules: ', appendRules);
-  }
-  console.log('------------------------ check import rules end ------------------------');
+  return new Promise((resolve) => {
+    const existedRules = [
+      ...Object.keys(layoutAndFormatting), //
+      ...Object.keys(suggestions),
+      ...Object.keys(possibleProblems),
+    ];
+    const removedRules = existedRules.filter((r) => !remoteKeys.includes(r));
+    const appendRules = remoteKeys.filter((r) => !existedRules.includes(r));
+    if (removedRules.length > 0) {
+      console.log('Remove rules: ', removedRules);
+    }
+    if (appendRules.length > 0) {
+      console.log('Appended rules: ', appendRules);
+    }
+    console.log('------------------------ check default rules end ------------------------');
+    resolve();
+  });
 }
 
-module.exports = function () {
+module.exports = async function () {
   console.log('------------------------ check default rules before ------------------------');
-  fetchHtml()
-    .then(getRuleKeysFromHtml)
-    .then(check)
-    .catch((e) => {
-      failure();
-      console.log(e);
-      process.exit(1);
-    });
+  const html = await fetchHtml().catch(failure);
+  const remoteKeys = await getRuleKeysFromHtml(html).catch(failure);
+  await check(remoteKeys).catch(failure);
 };

@@ -1,5 +1,7 @@
 const checkImportPluginRules = require('./check-import');
 const checkDefaultRules = require('./check-default');
 
-checkDefaultRules();
-checkImportPluginRules();
+(async function () {
+  await checkDefaultRules();
+  await checkImportPluginRules();
+})();

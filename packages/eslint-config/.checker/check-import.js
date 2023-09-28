@@ -32,7 +32,7 @@ function check(newRules) {
 
 module.exports = function () {
   console.log('------------------------ check import rules before ------------------------');
-  axios
+  return axios
     .get('https://www.npmjs.com/package/eslint-plugin-import')
     .then((res) => {
       if (!res?.data) {
